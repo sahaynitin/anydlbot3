@@ -8,8 +8,6 @@ import json
 from pyrogram import (
     Client,
     filters,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
     Message
 )
 from anydlbot import (
@@ -23,7 +21,7 @@ from anydlbot.helper_funcs.help_uploadbot import DownLoadFile
 from anydlbot.helper_funcs.run_cmnd import run_shell_command
 # the Strings used for this "thing"
 from translation import Translation
-
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 logging.basicConfig(
     level=logging.DEBUG,

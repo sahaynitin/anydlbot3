@@ -10,7 +10,7 @@ from anydlbot import (
     AUTH_USERS,
     DOWNLOAD_LOCATION
 # the Strings used for this "thing"
-from translation import Translation
+
 from pyrogram import filters
 
 logging.basicConfig(
@@ -18,7 +18,7 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 LOGGER = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
+from translation import Translation
 
 @Client.on_message(filters.photo)
 async def save_photo(bot, update):

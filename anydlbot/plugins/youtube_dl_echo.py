@@ -7,7 +7,7 @@ import logging
 import json
 from pyrogram import (
     Client,
-    Filters,
+    filters,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
     Message
@@ -33,7 +33,7 @@ LOGGER = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
-@Client.on_message(Filters.regex(pattern=".*http.*"))
+@Client.on_message(filters.regex(pattern=".*http.*"))
 async def echo(bot, update: Message):
     if update.from_user.id not in AUTH_USERS:
         await update.delete()

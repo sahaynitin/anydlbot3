@@ -1,22 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K
 
-# the logging things
-import logging
-import os
-from pyrogram import Client
-from anydlbot import (
-    AUTH_USERS,
-    DOWNLOAD_LOCATION
-# the Strings used for this "thing"
-from pyrogram import filters
-logging.basicConfig(
-    level=logging.DEBUG,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-LOGGER = logging.getLogger(__name__)
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-from translation import Translation
 
 @Client.on_message(filters.photo)
 async def save_photo(bot, update):

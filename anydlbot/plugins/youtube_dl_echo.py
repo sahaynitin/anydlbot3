@@ -7,8 +7,7 @@ import logging
 import json
 from pyrogram import (
     Client,
-    filters,
-    Message
+    filters
 )
 from anydlbot import (
     AUTH_USERS,
@@ -21,7 +20,7 @@ from anydlbot.helper_funcs.help_uploadbot import DownLoadFile
 from anydlbot.helper_funcs.run_cmnd import run_shell_command
 # the Strings used for this "thing"
 from translation import Translation
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 logging.basicConfig(
     level=logging.DEBUG,

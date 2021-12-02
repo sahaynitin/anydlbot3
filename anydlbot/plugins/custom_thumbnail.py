@@ -11,7 +11,8 @@ from anydlbot import (
     DOWNLOAD_LOCATION
 # the Strings used for this "thing"
 
-from pyrogram import filters
+from pyrogram import (
+    filters
 
 logging.basicConfig(
     level=logging.DEBUG,

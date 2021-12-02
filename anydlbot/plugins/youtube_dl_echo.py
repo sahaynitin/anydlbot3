@@ -28,7 +28,12 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
+from helper_funcs.display_progress import humanbytes
+from helper_funcs.help_uploadbot import DownLoadFile
+from helper_funcs.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
+from hachoir.metadata import extractMetadata
+from hachoir.parser import createParser
+from pyrogram.errors import UserNotParticipant
 @Client.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):
     imog = await update.reply_text("Processing", reply_to_message_id=update.message_id)

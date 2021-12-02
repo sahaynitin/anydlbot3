@@ -8,7 +8,7 @@ import os
 if bool(os.environ.get("ENV", False)):
     from anydlbot.sample_config import Config
 else:
-    from anydlbot.config import Config
+    from anydlbot.sample_config import Config
 
 
 # TODO: is there a better way?

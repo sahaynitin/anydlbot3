@@ -21,7 +21,7 @@ from anydlbot.helper_funcs.run_cmnd import run_shell_command
 # the Strings used for this "thing"
 from translation import Translation
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-
+from anydlbot.sample_config import Config
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"

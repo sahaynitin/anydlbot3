@@ -3,7 +3,7 @@ import os
 if bool(os.environ.get("WEBHOOK", False)):
     from anydlbot.sample_config import Config
 else:
-    from sample_config import Config
+    from anydlbot.sample_config import Config
 
 from anydlbot.plugins.youtube_dl_button import youtube_dl_call_back
 from anydlbot.plugins.dl_button import ddl_call_back

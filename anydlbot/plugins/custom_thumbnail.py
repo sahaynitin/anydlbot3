@@ -1,3 +1,13 @@
+import os
+
+if bool(os.environ.get("WEBHOOK", False)):
+    from anydlbot.sample_config import Config
+else:
+    from anydlbot.sample_config import Config
+
+from pyrogram import Client, filters    
+
+from translation import Translation
 
 
 @Client.on_message(filters.photo)

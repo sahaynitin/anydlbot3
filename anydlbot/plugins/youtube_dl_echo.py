@@ -41,7 +41,7 @@ async def echo(bot, update: Message):
     #     action="typing"
     # )
     LOGGER.info(update.from_user)
-    url, _, youtube_dl_username, youtube_dl_password = get_link(update)
+    url, _, youtube_dl_username, youtube_dl_password
     if HTTP_PROXY is not None:
         command_to_exec = [
             "yt-dlp",

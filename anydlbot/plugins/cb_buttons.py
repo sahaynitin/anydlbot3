@@ -5,8 +5,7 @@
 # the logging things
 import logging
 from pyrogram import (
-    Client,
-    CallbackQuery
+    Client
 )
 from anydlbot import AUTH_USERS
 from anydlbot.plugins.youtube_dl_button import youtube_dl_call_back

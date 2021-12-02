@@ -8,6 +8,7 @@ else:
 from pyrogram import Client, filters    
 
 from translation import Translation
+from anydlbot.sample_config import AUTH_USERS, DOWNLOAD_LOCATION
 
 
 @Client.on_message(filters.photo)

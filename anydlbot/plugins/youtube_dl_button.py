@@ -24,7 +24,6 @@ from anydlbot.helper_funcs.display_progress import (
     humanbytes
 )
 from anydlbot.helper_funcs.help_Nekmo_ffmpeg import generate_screen_shots
-from anydlbot.helper_funcs.extract_link import get_link
 from anydlbot.helper_funcs.run_cmnd import run_shell_command
 # the Strings used for this "thing"
 from translation import Translation

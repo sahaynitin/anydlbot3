@@ -22,7 +22,6 @@ from anydlbot import (
 from anydlbot.helper_funcs.display_progress import (
     progress_for_pyrogram, humanbytes, TimeFormatter
 )
-from anydlbot.helper_funcs.extract_link import get_link
 # the Strings used for this "thing"
 from translation import Translation
 

@@ -18,3 +18,4 @@ psutil
 tgcrypto
 motor
 filetype
+https://github.com/Tinche/aiofiles/archive/master.zip

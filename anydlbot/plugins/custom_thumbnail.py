@@ -10,10 +10,7 @@ from anydlbot import (
     AUTH_USERS,
     DOWNLOAD_LOCATION
 # the Strings used for this "thing"
-
-from pyrogram import (
-    filters
-
+from pyrogram import filters
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"

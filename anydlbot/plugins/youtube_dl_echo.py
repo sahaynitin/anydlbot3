@@ -30,37 +30,7 @@ LOGGER = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
-@Client.on_message(filters.regex(pattern=".*http.*"))
-async def echo(bot, update: Message):
-    if update.from_user.id not in AUTH_USERS:
-        await update.delete()
-        return
-    # LOGGER.info(update)
-    # await bot.send_chat_action(
-    #     chat_id=update.chat.id,
-    #     action="typing"
-    # )
-    LOGGER.info(update.from_user)
-    youtube_dl_username, youtube_dl_password
-    if HTTP_PROXY is not None:
-        command_to_exec = [
-            "yt-dlp",
-            "--no-warnings",
-            "--youtube-skip-dash-manifest",
-            "--proxy", HTTP_PROXY
-        ]
-    else:
-        command_to_exec = [
-            "yt-dlp",
-            "--no-warnings",
-            "--youtube-skip-dash-manifest"
-        ]
-    if youtube_dl_username is not None:
-        command_to_exec.append("--username")
-        command_to_exec.append(youtube_dl_username)
-    if youtube_dl_password is not None:
-        command_to_exec.append("--password")
-        command_to_exec.append(youtube_dl_password)
+
     # logger.info(command_to_exec)
     t_response, e_response = await run_shell_command(command_to_exec)
     # https://github.com/rg3/youtube-dl/issues/2630#issuecomment-38635239

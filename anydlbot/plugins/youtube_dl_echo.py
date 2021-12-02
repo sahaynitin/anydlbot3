@@ -41,23 +41,19 @@ async def echo(bot, update: Message):
     #     action="typing"
     # )
     LOGGER.info(update.from_user)
-    url, _, youtube_dl_username, youtube_dl_password
+    youtube_dl_username, youtube_dl_password
     if HTTP_PROXY is not None:
         command_to_exec = [
             "yt-dlp",
             "--no-warnings",
             "--youtube-skip-dash-manifest",
-            "-j",
-            url,
             "--proxy", HTTP_PROXY
         ]
     else:
         command_to_exec = [
             "yt-dlp",
             "--no-warnings",
-            "--youtube-skip-dash-manifest",
-            "-j",
-            url
+            "--youtube-skip-dash-manifest"
         ]
     if youtube_dl_username is not None:
         command_to_exec.append("--username")

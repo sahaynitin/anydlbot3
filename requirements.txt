@@ -4,4 +4,16 @@ Pillow
 pyrogram
 requests
 tgcrypto
-youtube-dl
+yt-dlp
+beautifulsoup4
+psycopg2-binary
+numpy
+ffmpeg-python
+ffmpeg
+feedparser
+dnspython
+aiofiles
+pyromod
+psutil
+tgcrypto
+motor

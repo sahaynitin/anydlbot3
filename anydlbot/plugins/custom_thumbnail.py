@@ -13,7 +13,7 @@ from anydlbot import (
 )
 # the Strings used for this "thing"
 from translation import Translation
-
+from pyrogram import filters
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -23,7 +23,7 @@ LOGGER = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
-@Client.on_message(Filters.photo)
+@Client.on_message(filters.photo)
 async def save_photo(bot, update):
     if update.from_user.id not in AUTH_USERS:
         await bot.delete_messages(
@@ -48,7 +48,7 @@ async def save_photo(bot, update):
     )
 
 
-@Client.on_message(Filters.command(["deletethumbnail"]))
+@Client.on_message(filters.command(["deletethumbnail"]))
 async def delete_thumbnail(bot, update):
     if update.from_user.id not in AUTH_USERS:
         await bot.delete_messages(

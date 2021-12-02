@@ -28,9 +28,9 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-from helper_funcs.display_progress import humanbytes
-from helper_funcs.help_uploadbot import DownLoadFile
-from helper_funcs.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
+from anydlbot.helper_funcs.display_progress import humanbytes
+from anydlbot.helper_funcs.help_uploadbot import DownLoadFile
+from anydlbot.helper_funcs.display_progress import progress_for_pyrogram, humanbytes, TimeFormatter
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from pyrogram.errors import UserNotParticipant

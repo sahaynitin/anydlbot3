@@ -25,7 +25,7 @@ from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
     Message
-
+from database.database import *
 
 @Client.on_message(filters.regex(pattern=".*http.*"))
 async def echo(bot, update: Message):

@@ -23,7 +23,7 @@ from anydlbot.helper_funcs.extract_link import get_link
 from anydlbot.helper_funcs.run_cmnd import run_shell_command
 # the Strings used for this "thing"
 from translation import Translation
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, LOGGER
 
 @Client.on_message(filters.private & filters.regex(pattern=".*http.*"))
 async def echo(bot, update):

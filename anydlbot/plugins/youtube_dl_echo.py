@@ -44,7 +44,7 @@ async def echo(bot, update):
         except Exception as error:
             print(error)
     logger.info(update.from_user.id)
-    fmsg = await update.reply_text(text=Translation.CHECKING_LINK, quote=True)
+    fmsg = await update.reply_text(text=CHECKING_LINK, quote=True)
     url = update.text
     if Config.UPDATE_CHANNEL:
         try:

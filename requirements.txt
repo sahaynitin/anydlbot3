@@ -20,15 +20,15 @@ motor
 filetype
 https://github.com/Tinche/aiofiles/archive/master.zip
 tldextract
-certifi==2018.4.16
-chardet==3.0.4
-future==0.16.0
-idna==2.6
-multidict==4.3.1
-python-telegram-bot==10.1.0
-rsa==3.4.2
-Telethon-sync==1.0.4
-urllib3==1.22
-yarl==1.2.6
+certifi
+chardet
+future
+idna
+multidict
+python-telegram-bot
+rsa
+Telethon-sync
+urllib3
+yarl
 yt-dlp
 

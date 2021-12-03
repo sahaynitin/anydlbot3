@@ -54,4 +54,5 @@ class Config(object):
     DEF_WATER_MARK_FILE = ""
     # Sql Database url
     DB_URI = os.environ.get("DATABASE_URL", "")
-    
+    # Update channel for Force Subscribe
+    UPDATE_CHANNEL = os.environ.get("UPDATE_CHANNEL", "")

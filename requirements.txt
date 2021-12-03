@@ -27,7 +27,6 @@ idna
 multidict
 python-telegram-bot
 rsa
-Telethon-sync
 urllib3
 yarl
 yt-dlp

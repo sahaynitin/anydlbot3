@@ -30,7 +30,7 @@ from telethon.tl.types import DocumentAttributeVideo
 
 
 # the secret configuration specific things
-from sample_config import Config
+from anydlbot.sample_config import Config
 # the Strings used for this "thing"
 from translation import Translation
 

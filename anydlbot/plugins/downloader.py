@@ -35,7 +35,7 @@ from anydlbot.sample_config import Config
 from translation import Translation
 
 # the Telegram trackings
-from chatbase import Message
+from pyrogram.types import Message
 ABUSIVE_SPAM = []
 
 def TRChatBase(chat_id, message_text, intent):

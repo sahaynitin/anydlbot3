@@ -36,7 +36,7 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
+from anydlbot.sample_config import Config
 
 async def youtube_dl_call_back(bot, update):
     cb_data = update.data

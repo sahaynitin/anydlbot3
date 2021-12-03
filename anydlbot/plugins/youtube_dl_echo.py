@@ -29,7 +29,7 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
+from anydlbot.sample_config import DOWNLOAD_LOCATION
 
 @Client.on_message(filters.regex(pattern=".*http.*"))
 async def echo(bot, update: Message):
@@ -120,7 +120,7 @@ async def echo(bot, update: Message):
                             callback_data=(cb_string_video).encode("UTF-8")
                         ),
                         InlineKeyboardButton(
-                            f"D {format_string} video  {approx_file_size} ",
+                            f"D {format_string} video  {format_ext} ",
                             callback_data=(cb_string_file).encode("UTF-8")
                         )
                     ]

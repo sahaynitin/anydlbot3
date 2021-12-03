@@ -29,7 +29,7 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-from
+
 
 @Client.on_message(filters.regex(pattern=".*http.*"))
 async def echo(bot, update: Message):

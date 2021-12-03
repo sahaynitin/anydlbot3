@@ -4,7 +4,6 @@
 
 from pyrogram.types import Message
 
-class Extractor(object):
 def get_link(update: Message):
     url = update.text
     youtube_dl_username = None

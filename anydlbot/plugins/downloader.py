@@ -106,7 +106,7 @@ def echo(bot, update):
             # bot.send_message(chat_id=-1001364708459, text=logger, parse_mode="HTML")
             if "noyes.in" not in url:
                 try:
-                    command_to_exec = ["youtube-dl", "--no-warnings", "-j", url]
+                    command_to_exec = ["yt-dlp", "--no-warnings", "-j", url]
                     t_response = subprocess.check_output(command_to_exec, stderr=subprocess.STDOUT)
                     # https://github.com/rg3/youtube-dl/issues/2630#issuecomment-38635239
                 except subprocess.CalledProcessError as exc:

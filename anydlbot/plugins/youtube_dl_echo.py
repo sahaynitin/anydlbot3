@@ -101,18 +101,25 @@ async def echo(bot, update):
     if youtube_dl_password is not None:
         command_to_exec.append("--password")
         command_to_exec.append(youtube_dl_password)
-        # logger.info(command_to_exec)
+        #logger.info(command_to_exec)
     process = await asyncio.create_subprocess_exec(
         *command_to_exec,
         # stdout must a pipe to be accessible as process.stdout
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE,
     )
-    t_response, e_response = await run_shell_command(command_to_exec)
+    # Wait for the subprocess to finish
+    stdout, stderr = await process.communicate()
+    e_response = stderr.decode().strip()
+    # logger.info(e_response)
+    t_response = stdout.decode().strip()
+    # logger.info(t_response)
     # https://github.com/rg3/youtube-dl/issues/2630#issuecomment-38635239
     if e_response and "nonnumeric port" not in e_response:
         # logger.warn("Status : FAIL", exc.returncode, exc.output)
-        error_message = e_response.replace(
+        error_message = e_response.replace("please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; see  https://yt-dl.org/update  on how to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.", "")
+        if "This video is only available for registered users." in error_message:
+            error_message = e_response.replace(
             Translation.YTDL_ERROR_MESSAGE,
             ""
         )

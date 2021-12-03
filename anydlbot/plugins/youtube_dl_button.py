@@ -51,8 +51,7 @@ async def youtube_dl_call_back(bot, update):
             message_ids=update.message.message_id,
             revoke=True
         )
-    return False
-
+        return False
     youtube_dl_url, \
         custom_file_name, \
         youtube_dl_username, \

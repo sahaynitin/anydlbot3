@@ -6,7 +6,7 @@
 import logging
 import json
 from pyrogram import Client, filters
-
+from anydlbot.sample_config import Config
 from anydlbot import (
     AUTH_USERS,
     HTTP_PROXY,

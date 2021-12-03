@@ -21,7 +21,7 @@ from anydlbot.helper_funcs.extract_link import get_link
 from anydlbot.helper_funcs.run_cmnd import run_shell_command
 # the Strings used for this "thing"
 from translation import Translation
-
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 logging.basicConfig(
     level=logging.DEBUG,

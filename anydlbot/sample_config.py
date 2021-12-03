@@ -32,7 +32,7 @@ class Config(object):
     # add config vars for the display progress
     FINISHED_PROGRESS_STR = os.environ.get("FINISHED_PROGRESS_STR", "█")
     UN_FINISHED_PROGRESS_STR = os.environ.get("UN_FINISHED_PROGRESS_STR", "░")
-    CHAT_BASE_TOKEN = os.environ.get("UPDATE_CHANNEL", "")
+    CHAT_BASE_TOKEN = os.environ.get("CHAT_BASE_TOKEN", "")
     # Log Channel ID
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
     # Telegram maximum file upload size

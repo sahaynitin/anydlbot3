@@ -23,7 +23,6 @@ tldextract
 certifi==2018.4.16
 chardet==3.0.4
 future==0.16.0
-hachoir3==3.0a2
 idna==2.6
 idna-ssl==1.0.1
 multidict==4.3.1

@@ -30,4 +30,4 @@ rsa
 urllib3
 yarl
 yt-dlp
-
+telethon

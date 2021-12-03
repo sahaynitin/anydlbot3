@@ -26,13 +26,6 @@ from pyrogram.types import (
     InlineKeyboardMarkup,
     Message
 
-logging.basicConfig(
-    level=logging.DEBUG,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
-LOGGER = logging.getLogger(__name__)
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
 
 @Client.on_message(filters.regex(pattern=".*http.*"))
 async def echo(bot, update: Message):

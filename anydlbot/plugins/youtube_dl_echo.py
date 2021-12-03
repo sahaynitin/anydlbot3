@@ -76,7 +76,7 @@ async def echo(bot, update):
     #     chat_id=update.chat.id,
     #     action="typing"
     # )
-    LOGGER.info(update.from_user)
+    # LOGGER.info(update.from_user)
     url, _, youtube_dl_username, youtube_dl_password = get_link(update)
     if HTTP_PROXY is not None:
         command_to_exec = [

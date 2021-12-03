@@ -51,68 +51,34 @@ async def youtube_dl_call_back(bot, update):
             message_ids=update.message.message_id,
             revoke=True
         )
-        return False
-    youtube_dl_url = update.message.reply_to_message.text
-    custom_file_name = str(response_json.get("title")) + \
-        "_" + youtube_dl_format + "." + youtube_dl_ext
-    youtube_dl_username = get_link(
+                return False
+
+    youtube_dl_url, \
+        custom_file_name, \
+        youtube_dl_username, \
+        youtube_dl_password = get_link(
             update.message.reply_to_message
-    youtube_dl_password = get_link(
-            update.message.reply_to_message
-    if "|" in youtube_dl_url:
-        url_parts = youtube_dl_url.split("|")
-        if len(url_parts) == 2:
-            youtube_dl_url = url_parts[0]
-            custom_file_name = url_parts[1]
-        elif len(url_parts) == 4:
-            youtube_dl_url = url_parts[0]
-            custom_file_name = url_parts[1]
-            youtube_dl_username = url_parts[2]
-            youtube_dl_password = url_parts[3]
-        else:
-            for entity in update.message.reply_to_message.entities:
-                if entity.type == "text_link":
-                    youtube_dl_url = entity.url
-                elif entity.type == "url":
-                    o = entity.offset
-                    l = entity.length
-                    youtube_dl_url = youtube_dl_url[o:o + l]
-        if youtube_dl_url is not None:
-            youtube_dl_url = youtube_dl_url.strip()
-        if custom_file_name is not None:
-            custom_file_name = custom_file_name.strip()
-        # https://stackoverflow.com/a/761825/4723940
-        if youtube_dl_username is not None:
-            youtube_dl_username = get_link(
-            update.message.reply_to_message
-        if youtube_dl_password is not None:
-            youtube_dl_password = get_link(
-            update.message.reply_to_message
-        logger.info(youtube_dl_url)
-        logger.info(custom_file_name)
-    else:
-        for entity in update.message.reply_to_message.entities:
-            if entity.type == "text_link":
-                youtube_dl_url = entity.url
-            elif entity.type == "url":
-                o = entity.offset
-                l = entity.length
-                youtube_dl_url = youtube_dl_url[o:o + l]
-    await bot.edit_message_text(
-        text=Translation.DOWNLOAD_START,
-        chat_id=update.message.chat.id,
-        message_id=update.message.message_id
+        )
+    if not custom_file_name:
+        custom_file_name = str(response_json.get("title")) + \
+            "_" + youtube_dl_format + "." + youtube_dl_ext
+    await update.message.edit_caption(
+        caption=Translation.DOWNLOAD_START
     )
-    user = await bot.get_me()
-    mention = user["mention"]
-    description = Translation.CUSTOM_CAPTION_UL_FILE.format(mention)
+    description = Translation.CUSTOM_CAPTION_UL_FILE
     if "fulltitle" in response_json:
         description = response_json["fulltitle"][0:1021]
         # escape Markdown and special characters
-    tmp_directory_for_each_user = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id)
+    tmp_directory_for_each_user = os.path.join(
+        DOWNLOAD_LOCATION,
+        str(update.from_user.id)
+    )
     if not os.path.isdir(tmp_directory_for_each_user):
         os.makedirs(tmp_directory_for_each_user)
-    download_directory = tmp_directory_for_each_user + "/" + custom_file_name
+    download_directory = os.path.join(
+        tmp_directory_for_each_user,
+        custom_file_name
+    )
     command_to_exec = []
     if tg_send_type == "audio":
         command_to_exec = [

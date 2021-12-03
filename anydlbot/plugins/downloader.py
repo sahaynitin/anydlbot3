@@ -18,7 +18,7 @@ import json
 
 from telethon import TelegramClient
 from telethon.errors import (
-    RPCError, BrokenAuthKeyError, ServerError,
+    RPCError, ServerError,
     FloodWaitError, FloodTestPhoneWaitError, FileMigrateError,
     TypeNotFoundError, UnauthorizedError, PhoneMigrateError,
     NetworkMigrateError, UserMigrateError, SessionPasswordNeededError

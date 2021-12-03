@@ -143,3 +143,5 @@ Please short your file name and try again!"""
         "and include its complete output."
     )
     ISOAYD_PREMIUM_VIDEOS = "video is only available for registered users"
+    ABS_TEXT = "please subscribe @MalayalamTrollVoice #ForTheGreaterGood "
+    UPGRADE_TEXT = "No upgrades!"

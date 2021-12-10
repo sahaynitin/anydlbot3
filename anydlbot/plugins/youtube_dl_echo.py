@@ -149,9 +149,9 @@ async def echo(bot, update):
                 cb_string_file = "{}|{}|{}".format(
                     "file", format_id, format_ext)
                 if format_string and "audio only" not in format_string:
-                    ikeyboard = InlineKeyboardMarkup([[InlineKeyboardButton(
+                    ikeyboard = InlineKeyboardButton(
                 "Video 🎥", callback_data=(cb_string_file).encode("UTF-8"), InlineKeyboardButton("Document 🗂",
-                                                                                                    callback_data="(cb_string_file).encode("UTF-8")]])
+                                                                                                    callback_data="(cb_string_file).encode("UTF-8")
                 else:
                     # special weird case :\
                     ikeyboard = [

@@ -152,7 +152,6 @@ async def echo(bot, update):
                     ikeyboard = InlineKeyboardMarkup([[InlineKeyboardButton(
                 "Video 🎥", callback_data=f"{media_type}||{format_id}||{yturl}"), InlineKeyboardButton("Document 🗂",
                                                                                                     callback_data=f"docvideo||{format_id}||{yturl}")]])
-                    ]
                 else:
                     # special weird case :\
                     ikeyboard = [

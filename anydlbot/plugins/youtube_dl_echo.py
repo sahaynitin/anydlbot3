@@ -151,7 +151,7 @@ async def echo(bot, update):
                 if format_string and "audio only" not in format_string:
                     ikeyboard = InlineKeyboardButton(
                 "Video 🎥", callback_data=(cb_string_file).encode("UTF-8"), InlineKeyboardButton("Document 🗂",
-                                                                                                    callback_data="(cb_string_file).encode("UTF-8")
+                                                                                                    callback_data=(cb_string_file).encode("UTF-8")
                 else:
                     # special weird case :\
                     ikeyboard = [
